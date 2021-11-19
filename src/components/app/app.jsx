@@ -1,5 +1,7 @@
+import VehiclePage from "../pages/vehicle/vehicle-page";
+
 const App = () => (
-  `<h1>Hello World!!!</h1>`
+  <VehiclePage />
 );
 
 export default App;

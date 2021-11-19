@@ -11,6 +11,11 @@ html {
 
 body {
   font-family: "Open Sans", "Arial", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: $general-text;
+  background-color: $general-white;
+  min-width: $desktop-width;
 }
 
 img {
