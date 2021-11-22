@@ -9,7 +9,7 @@ const Slider = () => (
   <section className="main__slider slider">
     <h2 className="slider__heading visually-hidden">Фотографии</h2>
     <img className="slider__full-size-image" src={desktopSlide1} alt="Описание фотографии" width="600" height="375" />
-    <p className="slider__new-model-mark">New model</p>
+    <p className="slider__new-model-mark"><b>New model</b></p>
     <div className="slider__bottom-wrapper">
       <p className="slider__buttons-paragraph">
         <button className="slider__button slider__button--show-previous-slide" disabled>

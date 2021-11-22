@@ -1,0 +1,142 @@
+.general-info {
+  padding: 46px 0;
+  padding-left: 57px;
+}
+
+.general-info__specifications-list {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  margin: 0;
+  padding-bottom: 27px;
+  text-align: center;
+}
+
+.general-info__specifications-item {
+  width: 70px;
+
+  &:not(&--model) {
+    position: relative;
+    margin-right: 7px;
+    padding-top: 42px;
+    opacity: 0.5;
+  }
+
+  &--model {
+    font-size: 30px;
+    position: absolute;
+    top: -58px;
+    width: auto;
+  }
+
+  &--transmission {
+    width: 76px;
+  }
+
+  &:not(&--model)::before {
+    content: "";
+    width: 100%;
+    height: 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    display: block;
+    position: absolute;
+    top: 0;
+  }
+
+  &--fuel-type::before {
+    background-image: url("../../img/fuel-type.svg");
+    left: 1px;
+  }
+
+  &--transmission::before {
+    background-image: url("../../img/transmission.svg");
+  }
+
+  &--power::before {
+    background-image: url("../../img/power.svg");
+  }
+
+  &--volume::before {
+    background-image: url("../../img/volume.svg");
+  }
+}
+
+.general-info__specifications-definition {
+  margin: 0;
+
+  &:not(&--model) {
+    text-transform: lowercase;
+  }
+}
+
+.general-info__price-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 16px 0;
+  width: 334px;
+}
+
+.general-info__price-value {
+  &--current {
+    font-weight: 700;
+    font-size: 35px;
+  }
+
+  &--old {
+    font-size: 20px;
+    opacity: 0.5;
+    position: relative;
+  }
+
+  &--old::before {
+    content: "";
+    width: 123px;
+    height: 1px;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: -3px;
+    transform: rotate(355deg);
+    background-color: $general-text;
+  }
+}
+
+.general-info__links-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  padding-top: 24px;
+  transform: translateX(-3px);
+}
+
+.general-info__links-item {
+  margin-bottom: 16px;
+}
+
+.general-info__link {
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: $general-white;
+  border: 1px solid $button-active;
+  background-color: $button-active;
+  padding: 17px;
+  padding-left: 20px;
+  display: block;
+  width: fit-content;
+
+  &--buy-in-credit {
+    color: $button-active;
+    background-color: $general-white;
+    padding-right: 18px;
+    // crutch
+    transform: translateX(0.5px);
+  }
+}
