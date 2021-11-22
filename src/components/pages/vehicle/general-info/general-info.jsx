@@ -1,5 +1,5 @@
 const GeneralInfo = () => (
-  <section className="page-main__general-info general-info">
+  <section className="main__general-info general-info">
     <h2 className="general-info__heading">Основная информация</h2>
     <dl className="general-info__list">
       <div className="general-info__wrapper general-info__wrapper--model">

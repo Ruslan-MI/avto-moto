@@ -4,14 +4,13 @@
 }
 
 .header__nav {
-  padding: 15px 7px 11px;
+  padding: 15px 7px 14px;
   display: flex;
   flex-wrap: wrap;
 }
 
 .header__logo-image {
-  min-width: 134px;
-  min-height: 55px;
+  display: block;
 }
 
 .header__nav-list {

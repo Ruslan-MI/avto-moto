@@ -1,0 +1,9 @@
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 90px;
+}
+
+.main__slider {
+  order: -1;
+}
