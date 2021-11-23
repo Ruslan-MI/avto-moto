@@ -13,9 +13,9 @@ const VehiclePage = () => (
         <strong>Марпех 11</strong>
         <span className=" visually-hidden">»</span>
       </h1>
+      <Slider />
       <GeneralInfo />
       <DetailedInfo />
-      <Slider />
     </main>
     <Footer />
   </>

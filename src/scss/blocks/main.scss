@@ -2,21 +2,18 @@
   display: flex;
   flex-wrap: wrap;
   padding: 90px 0 83px;
-  position: relative;;
+  position: relative;
 }
 
 .main__heading {
   font-size: 30px;
   position: absolute;
-  top: 58px;
+  top: 78px;
   left: 657px;
   width: auto;
+  margin: 0;
 }
 
 .main__general-info {
   flex-grow: 1;
-}
-
-.main__slider {
-  order: -1;
 }
