@@ -2,6 +2,7 @@ import Header from "../../header/header";
 import DetailedInfo from "./detailed-info/detailed-info";
 import GeneralInfo from "./general-info/general-info";
 import Slider from "./slider/slider";
+import Footer from "../../footer/footer";
 
 const VehiclePage = () => (
   <>
@@ -12,6 +13,7 @@ const VehiclePage = () => (
       <DetailedInfo />
       <Slider />
     </main>
+    <Footer />
   </>
 );
 

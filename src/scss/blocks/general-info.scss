@@ -137,4 +137,19 @@
     background-color: $general-white;
     padding-right: 18px;
   }
+
+  &:hover,
+  &:focus {
+    background-color: $button-hover;
+  }
+
+  &--buy-in-credit:hover,
+  &--buy-in-credit:focus {
+    color: $general-white;
+    background-color: $button-active;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
 }

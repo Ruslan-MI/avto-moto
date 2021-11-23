@@ -1,33 +1,21 @@
-.header {
+.footer {
   background-color: $header-background;
   font-weight: 600;
 }
 
-.header__nav {
-  padding: 15px 7px 14px;
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.header__logo-image {
-  display: block;
-}
-
-.header__nav-list {
+.footer__nav-list {
   list-style: none;
-  margin: 0;
-  padding: 0;
-  margin-left: auto;
+  padding: 14px 7px 14px 10px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
-.header__nav-item {
+.footer__nav-item {
   padding: 18px 0;
-  padding-left: 68px;
 }
 
-.header__nav-link {
+.footer__nav-link {
   color: inherit;
 
   &:hover,

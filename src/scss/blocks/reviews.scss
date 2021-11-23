@@ -135,6 +135,7 @@
 .reviews__button {
   color: $button-active;
   background-color: inherit;
+  cursor: pointer;
 
   &--show-answer-form {
     padding: 0;

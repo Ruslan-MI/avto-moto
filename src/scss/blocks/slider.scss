@@ -53,6 +53,7 @@
   padding: 0;
   background-color: $general-white;
   position: relative;
+  cursor: pointer;
 
   &::after {
     content: "";
