@@ -1,0 +1,47 @@
+.contacts {
+  padding-top: 29px;
+  position: relative;
+  width: 779px;
+}
+
+.contacts__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  width: 274px;
+}
+
+.contacts__item {
+  padding-bottom: 27px;
+}
+
+.contacts__item-heading {
+  font-weight: 700;
+  line-height: 22px;
+  color: $dark-text;
+  margin: 0;
+  padding-bottom: 6px;
+}
+
+.contacts__content {
+  font-weight: 600;
+  font-size: 14px;
+  color: $general-black;
+  line-height: 19px;
+
+  &--working-hours {
+    margin: 0;
+  }
+}
+
+.contacts__figure {
+  margin: 0;
+  position: absolute;
+  width: 431px;
+  height: 271px;
+  background-image: url("../../img/map.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  top: 30px;
+  right: 0;
+}

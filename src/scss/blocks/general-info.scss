@@ -101,8 +101,8 @@
     display: block;
     position: absolute;
     top: 50%;
-    left: -3px;
-    transform: rotate(355deg);
+    left: 50%;
+    transform: translateX(-50%) rotate(-5deg);
     background-color: $general-text;
   }
 }
@@ -116,7 +116,7 @@
 }
 
 .general-info__links-item {
-  margin-bottom: 16px;
+  padding-bottom: 16px;
 }
 
 .general-info__link {
@@ -136,7 +136,5 @@
     color: $button-active;
     background-color: $general-white;
     padding-right: 18px;
-    // crutch
-    transform: translateX(0.5px);
   }
 }

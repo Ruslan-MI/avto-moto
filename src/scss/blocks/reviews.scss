@@ -1,0 +1,155 @@
+.reviews {
+  padding-top: 11px;
+  position: relative;
+}
+
+.reviews__list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.reviews__item {
+  padding: 23px 0 15px;
+  border-bottom: 0.5px solid $ghost-black;
+}
+
+.reviews__blockquote {
+  margin: 0;
+  font-size: 15px;
+  line-height: 20px;
+}
+
+.reviews__author-paragraph {
+  margin: 0;
+  padding-bottom: 1px;
+}
+
+.reviews__author {
+  font-weight: 600;
+  font-size: 20px;
+  font-style: normal;
+}
+
+.reviews__content-wrapper {
+  color: $general-black;
+  padding-top: 14px;
+  padding-left: 19px;
+
+  &--comment {
+    padding-left: 0;
+  }
+
+  &--dignity,
+  &--limitations {
+    position: relative;
+  }
+
+  &--dignity::before,
+  &--limitations::before {
+    color: $button-active;
+    font-size: 15px;
+    position: absolute;
+    left: 0;
+    top: 14px;
+  }
+
+  &--dignity::before {
+    content: "+";
+  }
+
+  &--limitations::before {
+    content: "–";
+    top: 13px;
+  }
+}
+
+.reviews__content-heading {
+  font-weight: 600;
+  margin: 0;
+}
+
+.reviews__content {
+  margin: 0;
+  padding-top: 4px;
+}
+
+.reviews__rating {
+  display: flex;
+  padding: 21px 0;
+}
+
+.reviews__stars {
+  width: 100px;
+  height: 17px;
+  background-image: url("../../img/stars.svg");
+
+  &--active {
+    background-image: url("../../img/stars-active.svg");
+    width: 60%;
+  }
+}
+
+.reviews__rating-total {
+  margin: 0;
+  padding: 0 24px;
+}
+
+.reviews__rating-total-essence {
+  color: $button-active;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 400;
+  text-transform: capitalize;
+}
+
+.reviews__bottom-wrapper {
+  display: flex;
+  padding: 6px 0;
+}
+
+.reviews__date-paragraph {
+  margin: 0;
+}
+
+.reviews__date {
+  font-size: 14px;
+  color: $general-black;
+  opacity: 0.4;
+}
+
+.reviews__buttons-paragraph {
+  margin: 0;
+
+  &--show-answer-form {
+    padding-left: 27px;
+  }
+
+  &--show-review-form {
+    position: absolute;
+    top: 30px;
+    right: 3px;
+  }
+}
+
+.reviews__button {
+  color: $button-active;
+  background-color: inherit;
+
+  &--show-answer-form {
+    padding: 0;
+    border: none;
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  &--show-review-form {
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    border: 1px solid $button-active;
+    padding: 17px;
+    padding-left: 19px;
+  }
+}

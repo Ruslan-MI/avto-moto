@@ -2,6 +2,7 @@
   width: 600px;
   position: relative;
   text-align: center;
+  padding-bottom: 45px;
 }
 
 .slider__new-model-mark {
@@ -14,7 +15,6 @@
   font-weight: 600;
   font-size: 10px;
   letter-spacing: 0.07em;
-  text-align: center;
   color: $general-white;
   text-transform: uppercase;
   background-color: $button-active;

@@ -1,0 +1,20 @@
+.specifications {
+  width: 565px;
+  padding: 11px 0;
+}
+
+.specifications__list {
+  margin: 0;
+}
+
+.specifications__item {
+  border-bottom: 1px solid $button-border;
+  display: flex;
+  justify-content: space-between;
+  padding: 19px 0 8px;
+  line-height: 22px;
+}
+
+.specifications__definition {
+  color: $general-black;
+}

@@ -30,7 +30,7 @@ const GeneralInfo = () => (
       </li>
       <li className="general-info__price-item">
         <span className="general-info__price-description visually-hidden">Старая цена: </span>
-        <span className="general-info__price-value general-info__price-value--old">2 <span className="crutch" style={{ "padding-left": 5 }}></span> 400 000 ₽</span>
+        <span className="general-info__price-value general-info__price-value--old">2 400 000 ₽</span>
       </li>
     </ul>
     <ul className="general-info__links-list">
