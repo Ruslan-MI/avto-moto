@@ -8,7 +8,11 @@ const VehiclePage = () => (
   <>
     <Header />
     <main className="main main--vehicle wrapper">
-      <h1 className="main__heading visually-hidden">Информация о транспортном средстве</h1>
+      <h1 className="main__heading">
+        <span className=" visually-hidden">Информация об автомобиле «</span>
+        <strong>Марпех 11</strong>
+        <span className=" visually-hidden">»</span>
+      </h1>
       <GeneralInfo />
       <DetailedInfo />
       <Slider />

@@ -4,11 +4,11 @@ const Specifications = () => (
     <dl className="specifications__list">
       <div className="specifications__item">
         <dt className="specifications__term">Трансмиссия</dt>
-        <dd className="specifications__definition">Роботизированная</dd>
+        <dd className="specifications__definition">Механическая</dd>
       </div>
       <div className="specifications__item">
         <dt className="specifications__term">Мощность двигателя, л.с.</dt>
-        <dd className="specifications__definition">249</dd>
+        <dd className="specifications__definition">100</dd>
       </div>
       <div className="specifications__item">
         <dt className="specifications__term">Тип двигателя</dt>
@@ -20,7 +20,7 @@ const Specifications = () => (
       </div>
       <div className="specifications__item">
         <dt className="specifications__term">Объём двигателя, л</dt>
-        <dd className="specifications__definition">2.4</dd>
+        <dd className="specifications__definition">1.4</dd>
       </div>
       <div className="specifications__item">
         <dt className="specifications__term">Макс. крутящий момент</dt>

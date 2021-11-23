@@ -2,10 +2,6 @@ const GeneralInfo = () => (
   <section className="main__general-info general-info">
     <h2 className="general-info__heading visually-hidden">Основная информация</h2>
     <dl className="general-info__specifications-list">
-      <div className="general-info__specifications-item general-info__specifications-item--model">
-        <dt className="general-info__specifications-term visually-hidden">Наименование модели</dt>
-        <dd className="general-info__specifications-definition general-info__specifications-definition--model"><strong>Марпех 11</strong></dd>
-      </div>
       <div className="general-info__specifications-item general-info__specifications-item--fuel-type">
         <dt className="general-info__specifications-term visually-hidden">Тип потребляемого топлива</dt>
         <dd className="general-info__specifications-definition general-info__specifications-definition--fuel-type">Бензин</dd>

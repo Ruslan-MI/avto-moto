@@ -2,6 +2,15 @@
   display: flex;
   flex-wrap: wrap;
   padding: 90px 0 83px;
+  position: relative;;
+}
+
+.main__heading {
+  font-size: 30px;
+  position: absolute;
+  top: 58px;
+  left: 657px;
+  width: auto;
 }
 
 .main__general-info {

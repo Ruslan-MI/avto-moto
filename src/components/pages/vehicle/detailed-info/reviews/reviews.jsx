@@ -35,7 +35,7 @@ const Reviews = () => (
           <p className="reviews__rating-total">
             <span className="visually-hidden">Пользователь </span>
             <strong className="reviews__rating-total-essence">советует</strong>
-            <span className="visually-hidden"> это транспортное средство</span>
+            <span className="visually-hidden"> этот автомобиль</span>
           </p>
         </div>
         <div className="reviews__bottom-wrapper">
@@ -81,7 +81,7 @@ const Reviews = () => (
           <p className="reviews__rating-total">
             <span className="visually-hidden">Пользователь </span>
             <strong className="reviews__rating-total-essence">советует</strong>
-            <span className="visually-hidden"> это транспортное средство</span>
+            <span className="visually-hidden"> этот автомобиль</span>
           </p>
         </div>
         <div className="reviews__bottom-wrapper">
