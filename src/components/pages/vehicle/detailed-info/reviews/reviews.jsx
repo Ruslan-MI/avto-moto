@@ -30,7 +30,7 @@ const Reviews = () => (
         <div className="reviews__rating">
           <p className="reviews__rating-text visually-hidden">Оценка пользователя по пятибалльной шкале - 3</p>
           <div className="reviews__stars">
-            <div className="reviews__stars reviews__stars--active"></div>
+            <div className="reviews__stars reviews__stars--active" />
           </div>
           <p className="reviews__rating-total">
             <span className="visually-hidden">Пользователь </span>
@@ -76,7 +76,7 @@ const Reviews = () => (
         <div className="reviews__rating">
           <p className="reviews__rating-text visually-hidden">Оценка пользователя по пятибалльной шкале - 3</p>
           <div className="reviews__stars">
-            <div className="reviews__stars reviews__stars--active"></div>
+            <div className="reviews__stars reviews__stars--active" />
           </div>
           <p className="reviews__rating-total">
             <span className="visually-hidden">Пользователь </span>

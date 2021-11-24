@@ -9,7 +9,7 @@ const сyrillicBlockMap = {
 const NavItem = ({
   id,
   currentBlock,
-  onClick = () => { },
+  onClick,
 }) => {
   const handleLinkClick = (evt) => {
     evt.preventDefault();
@@ -28,7 +28,7 @@ const NavItem = ({
 NavItem.propTypes = {
   id: PropTypes.string.isRequired,
   currentBlock: PropTypes.string.isRequired,
-  onClick: PropTypes.func,
+  onClick: PropTypes.func.isRequired,
 }
 
 export default NavItem;

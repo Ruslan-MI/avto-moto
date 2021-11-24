@@ -1,5 +1,5 @@
 const Footer = () => (
-  <footer className="footer">
+  <footer className="page__footer footer">
     <ul className="footer__nav-list wrapper">
       <li className="footer__nav-item">
         <a className="footer__nav-link" href="#">Корпоративным клиентам</a>

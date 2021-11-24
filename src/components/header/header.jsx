@@ -1,7 +1,7 @@
 import logo from "../../img/main-logo.svg";
 
 const Header = () => (
-  <header className="header">
+  <header className="page__header header">
     <nav className="header__nav wrapper">
       <a className="header__logo-link" href="#" title="Перейти на главную">
         <img className="header__logo-image" src={logo} alt="Avto-Moto" width="134" height="55" />

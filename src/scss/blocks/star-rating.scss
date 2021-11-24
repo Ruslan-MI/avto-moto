@@ -1,0 +1,47 @@
+.star-rating {
+  display: flex;
+  padding: 4px 0;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.star-rating__heading {
+  font-weight: 600;
+  font-size: 15px;
+  color: $general-black;
+  margin: 0;
+}
+
+.star-rating__fieldset {
+  width: 175px;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 3px;
+  border: none;
+  display: flex;
+  transform: translateX(3px);
+  border-bottom: 3px solid transparent;
+
+  &:focus-within {
+    border-bottom: 3px solid $general-black;
+    border-radius: 18%;
+  }
+}
+
+.star-rating__input {
+  appearance: none;
+  width: 28px;
+  height: 28px;
+  flex-grow: 1;
+  background-image: url("../../img/star.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+
+  &--active {
+    background-image: url("../../img/star-active.svg");
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
