@@ -1,5 +1,11 @@
 import PropTypes from "prop-types";
 
+const сyrillicBlockMap = {
+  specifications: `Характеристики`,
+  reviews: `Отзывы`,
+  contacts: `Контакты`,
+};
+
 const NavItem = ({
   id,
   currentBlock,
@@ -14,7 +20,7 @@ const NavItem = ({
   return (
     <li className="detailed-info__nav-item">
       <a className={`detailed-info__nav-link ${id === currentBlock ? `detailed-info__nav-link--active` : ``}`} href={`#${id}`}
-        onClick={handleLinkClick}>{id}</a>
+        onClick={handleLinkClick}>{сyrillicBlockMap[id]}</a>
     </li>
   );
 };

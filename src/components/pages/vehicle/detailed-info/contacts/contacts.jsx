@@ -1,3 +1,5 @@
+import Map from "./map/map";
+
 const Contacts = () => (
   <section className="detailed-info__contacts contacts" id="contacts">
     <h3 className="contacts__heading visually-hidden">Контакты</h3>
@@ -7,7 +9,7 @@ const Contacts = () => (
         <a className="contacts__content contacts__content--address" href="geo:#">Санкт-Петербург,<br /> набережная реки Карповки, дом 5</a>
         <figure className="contacts__figure">
           <figcaption className="contacts__figcaption visually-hidden">Интерактивная карта, с отмеченным адресом</figcaption>
-          <div className="contacts__map"></div>
+          <Map />
         </figure>
       </li>
       <li className="contacts__item contacts__item--working-hours">
