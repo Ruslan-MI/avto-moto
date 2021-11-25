@@ -115,11 +115,12 @@
   }
 
   &--close {
-    width: 65px;
-    height: 65px;
+    width: 30px;
+    height: 30px;
     position: absolute;
     top: 0;
     right: 0;
+    transform: translate(-17px, 17px);
     border: none;
     background-color: inherit;
     padding: 0;

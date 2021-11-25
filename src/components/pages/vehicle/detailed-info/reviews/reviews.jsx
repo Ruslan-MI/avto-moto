@@ -74,7 +74,7 @@ const Reviews = ({
       </ul>
       <p className="reviews__buttons-paragraph reviews__buttons-paragraph--show-review-form">
         <button className="reviews__button reviews__button--show-review-form" type="button"
-          onClick={handleShowReviewFormButtonClick} >Оставить отзыв</button>
+          onClick={handleShowReviewFormButtonClick}>Оставить отзыв</button>
       </p>
     </section>
   );
