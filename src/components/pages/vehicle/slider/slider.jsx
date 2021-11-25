@@ -13,6 +13,7 @@ import desktopSlide2 from "../../../../img/desktop-slide-2.jpg";
 import desktopSlide3 from "../../../../img/desktop-slide-3.jpg";
 
 const MIN_SLIDE_INDEX = 0;
+const INCREMENT_STEP = 1;
 
 const carPhotos = [
   {
@@ -46,18 +47,16 @@ const Slider = () => {
   });
 
   const handleShowPreviousSlideButtonClick = () => {
-    setState(({
-      currentSlideIndex,
-    }) => ({
-      currentSlideIndex: --currentSlideIndex,
+    setState((state) => ({
+      ...state,
+      currentSlideIndex: state.currentSlideIndex - INCREMENT_STEP,
     }));
   };
 
   const handleShowNextSlideButtonClick = () => {
-    setState(({
-      currentSlideIndex,
-    }) => ({
-      currentSlideIndex: ++currentSlideIndex,
+    setState((state) => ({
+      ...state,
+      currentSlideIndex: state.currentSlideIndex + INCREMENT_STEP,
     }));
   };
 
@@ -69,11 +68,11 @@ const Slider = () => {
       <p className="slider__new-model-mark"><b>New model</b></p>
       <div className="slider__bottom-wrapper">
         <p className="slider__buttons-paragraph">
-          <button className="slider__button slider__button--show-previous-slide" disabled={!state.currentSlideIndex}
+          <button className="slider__button slider__button--show-previous-slide" disabled={state.currentSlideIndex === MIN_SLIDE_INDEX}
             onClick={handleShowPreviousSlideButtonClick}>
             <span className="slider__button-text visually-hidden">Показать предыдущий слайд</span>
           </button>
-          <button className="slider__button slider__button--show-next-slide" disabled={!(maxSlideIndex - state.currentSlideIndex)}
+          <button className="slider__button slider__button--show-next-slide" disabled={state.currentSlideIndex === maxSlideIndex}
             onClick={handleShowNextSlideButtonClick}>
             <span className="slider__button-text visually-hidden">Показать следующий слайд</span>
           </button>

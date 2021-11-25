@@ -85,14 +85,65 @@
   }
 }
 
-.modal__submit-button {
-  color: $general-white;
-  background-color: $button-active;
-  border: 1px solid $button-active;
-  text-transform: uppercase;
-  font-weight: 600;
-  font-size: 14px;
-  letter-spacing: 0.12em;
-  padding: 17px;
-  padding-left: 19px;
+.modal__button {
+  cursor: pointer;
+
+  &--submit {
+    color: $general-white;
+    background-color: $button-active;
+    border: 1px solid $button-active;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    padding: 17px;
+    padding-left: 19px;
+  }
+
+  &--close {
+    width: 65px;
+    height: 65px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border: none;
+    background-color: inherit;
+    padding: 0;
+  }
+
+  &--close:active {
+    background-color: $button-active;
+  }
+
+  &--close::before,
+  &--close::after {
+    content: "";
+    display: block;
+    width: 19px;
+    height: 2px;
+    background-color: $modal-button;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
+
+  &--close::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+  }
+
+  &--close::after {
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+
+  &--close:hover::before,
+  &--close:hover::after,
+  &--close:focus::before,
+  &--close:focus::after {
+    background-color: $button-active;
+  }
+
+  &--close:active::before,
+  &--close:active::after {
+    background-color: $general-white;
+  }
 }

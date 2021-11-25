@@ -3,10 +3,13 @@ import {
 } from "react";
 import PropTypes from "prop-types";
 
+import {
+  RATINGS,
+} from "../../../../../const";
+
 const INITIAL_RATING_ON_MOUSE_ENTER = 0;
 
 const StarRating = ({
-  data,
   currentRating,
   onChange,
 }) => {
@@ -22,13 +25,15 @@ const StarRating = ({
   };
 
   const handleRatingMouseEnter = (evt) => {
-    setState(() => ({
+    setState((state) => ({
+      ...state,
       ratingOnMouseEnter: Number(evt.target.value),
     }));
   };
 
-  const handleRatingMouseLeave = (evt) => {
-    setState(() => ({
+  const handleRatingMouseLeave = () => {
+    setState((state) => ({
+      ...state,
       ratingOnMouseEnter: INITIAL_RATING_ON_MOUSE_ENTER,
     }));
   };
@@ -37,7 +42,7 @@ const StarRating = ({
     <div className="modal__star-rating star-rating">
       <h4 className="star-rating__heading">Оцените товар<span className="visually-hidden"> по пятибалльной шкале</span>:</h4>
       <fieldset className="star-rating__fieldset">
-        {data.map(({
+        {RATINGS.map(({
           title,
           value,
         }) => <input className={`star-rating__input ${(state.ratingOnMouseEnter || currentRating) >= value ? `star-rating__input--active` : ``}`}
@@ -49,9 +54,8 @@ const StarRating = ({
 };
 
 StarRating.propTypes = {
-  data: PropTypes.arrayOf(PropTypes.object).isRequired,
   currentRating: PropTypes.number.isRequired,
   onChange: PropTypes.func.isRequired,
-}
+};
 
 export default StarRating;

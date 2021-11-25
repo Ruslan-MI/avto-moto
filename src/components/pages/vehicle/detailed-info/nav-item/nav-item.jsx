@@ -14,7 +14,9 @@ const NavItem = ({
   const handleLinkClick = (evt) => {
     evt.preventDefault();
 
-    onClick(id);
+    if (id !== currentBlock) {
+      onClick(id);
+    }
   };
 
   return (
@@ -29,6 +31,6 @@ NavItem.propTypes = {
   id: PropTypes.string.isRequired,
   currentBlock: PropTypes.string.isRequired,
   onClick: PropTypes.func.isRequired,
-}
+};
 
 export default NavItem;

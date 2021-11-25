@@ -1,6 +1,7 @@
 import {
   useState,
 } from "react";
+import PropTypes from "prop-types";
 
 import NavItem from "./nav-item/nav-item";
 import Specifications from "./specifications/specifications";
@@ -13,7 +14,10 @@ const DetailedInfoBlock = {
   CONTACTS: `contacts`,
 };
 
-const DetailedInfo = () => {
+const DetailedInfo = ({
+  reviews,
+  onModalToggle,
+}) => {
   const [
     state,
     setState,
@@ -22,11 +26,10 @@ const DetailedInfo = () => {
   });
 
   const onCurrentBlockChange = (id) => {
-    if (id !== state.currentBlock) {
-      setState(() => ({
-        currentBlock: id,
-      }));
-    }
+    setState((state) => ({
+      ...state,
+      currentBlock: id,
+    }));
   };
 
   return (
@@ -37,10 +40,15 @@ const DetailedInfo = () => {
           <NavItem key={item} id={item} currentBlock={state.currentBlock} onClick={onCurrentBlockChange} />)}
       </ul>
       {state.currentBlock === DetailedInfoBlock.SPECIFICATIONS && <Specifications />}
-      {state.currentBlock === DetailedInfoBlock.REVIEWS && <Reviews />}
+      {state.currentBlock === DetailedInfoBlock.REVIEWS && <Reviews reviews={reviews} onModalToggle={onModalToggle} />}
       {state.currentBlock === DetailedInfoBlock.CONTACTS && <Contacts />}
     </section>
   );
+};
+
+DetailedInfo.propTypes = {
+  reviews: PropTypes.arrayOf(PropTypes.object).isRequired,
+  onModalToggle: PropTypes.func.isRequired,
 };
 
 export default DetailedInfo;
