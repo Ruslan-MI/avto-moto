@@ -1,6 +1,9 @@
 import {
   useState,
 } from "react";
+import {
+  nanoid,
+} from "nanoid";
 
 import Header from "../../header/header";
 import DetailedInfo from "./detailed-info/detailed-info";
@@ -34,7 +37,10 @@ const VehiclePage = () => {
     setState((state) => ({
       ...state,
       reviews: [
-        review,
+        {
+          ...review,
+          id: nanoid(),
+        },
         ...state.reviews,
       ],
     }));
@@ -54,7 +60,7 @@ const VehiclePage = () => {
         <DetailedInfo reviews={state.reviews} onModalToggle={onModalToggle} />
       </main>
       <Footer />
-      {state.isModalOpen && <Modal onModalToggle={onModalToggle} onOverlayClick={onModalToggle}
+      {state.isModalOpen && <Modal onModalToggle={onModalToggle} onOverlayMouseDown={onModalToggle}
         onEscKeydown={onModalToggle} onReviewAdd={onReviewAdd} />}
     </div>
   );

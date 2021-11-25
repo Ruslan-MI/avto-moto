@@ -14,15 +14,14 @@ const NavItem = ({
   const handleLinkClick = (evt) => {
     evt.preventDefault();
 
-    if (id !== currentBlock) {
-      onClick(id);
-    }
+    onClick(id);
   };
 
   return (
     <li className="detailed-info__nav-item">
-      <a className={`detailed-info__nav-link ${id === currentBlock ? `detailed-info__nav-link--active` : ``}`} href={`#${id}`}
-        onClick={handleLinkClick}>{сyrillicBlockMap[id]}</a>
+      {id === currentBlock ?
+        <a className="detailed-info__nav-link detailed-info__nav-link--active">{сyrillicBlockMap[id]}</a> :
+        <a className="detailed-info__nav-link" href={`#${id}`} onClick={handleLinkClick}>{сyrillicBlockMap[id]}</a>}
     </li>
   );
 };

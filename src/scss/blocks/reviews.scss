@@ -142,6 +142,16 @@
     line-height: 20px;
   }
 
+  &--show-answer-form:hover,
+  &--show-answer-form:focus {
+    opacity: 0.6;
+  }
+
+  &--show-answer-form:active {
+    opacity: 1;
+    color: $general-black;
+  }
+
   &--show-review-form {
     font-size: 14px;
     font-weight: 600;
@@ -150,5 +160,15 @@
     border: 1px solid $button-active;
     padding: 17px;
     padding-left: 19px;
+  }
+
+  &--show-review-form:hover,
+  &--show-review-form:focus {
+    background-color: $button-active;
+    color: $general-white;
+  }
+
+  &--show-review-form:active {
+    opacity: 0.5;
   }
 }

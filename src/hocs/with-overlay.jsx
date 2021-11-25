@@ -1,12 +1,12 @@
 const withOverlay = (Component) =>
   ({
-    onOverlayClick,
+    onOverlayMouseDown,
     onEscKeydown,
     ...props
   }) => {
-    const handleOnOverlayClick = (evt) => {
+    const handleOverlayMouseDown = (evt) => {
       if (evt.target.matches(`.overlay`)) {
-        onOverlayClick();
+        onOverlayMouseDown();
       }
     };
 
@@ -17,7 +17,7 @@ const withOverlay = (Component) =>
     };
 
     return (
-      <div className="overlay" onClick={handleOnOverlayClick} onKeyDown={handleEscKeydown}>
+      <div className="overlay" onMouseDown={handleOverlayMouseDown} onKeyDown={handleEscKeydown}>
         <Component {...props} />
       </div>
     );

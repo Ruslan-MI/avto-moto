@@ -73,6 +73,10 @@
   padding-left: 24px;
   border: 1px solid $ghost-border;
 
+  &:hover {
+    border-color: $button-hover;
+  }
+
   &--comment {
     display: block;
     resize: none;
@@ -98,6 +102,16 @@
     letter-spacing: 0.12em;
     padding: 17px;
     padding-left: 19px;
+  }
+
+  &--submit:hover,
+  &--submit:focus {
+    background-color: $button-hover;
+    color: $general-white;
+  }
+
+  &--submit:active {
+    opacity: 0.5;
   }
 
   &--close {
