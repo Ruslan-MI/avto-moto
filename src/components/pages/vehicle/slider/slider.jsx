@@ -1,50 +1,22 @@
 import React, {
   useState,
 } from "react";
-import {
-  nanoid,
-} from "nanoid";
-
-import thumbnailDesktopSlide1 from "../../../../img/thumbnail-desktop-slide-1.jpg";
-import thumbnailDesktopSlide2 from "../../../../img/thumbnail-desktop-slide-2.jpg";
-import thumbnailDesktopSlide3 from "../../../../img/thumbnail-desktop-slide-3.jpg";
-import desktopSlide1 from "../../../../img/desktop-slide-1.jpg";
-import desktopSlide2 from "../../../../img/desktop-slide-2.jpg";
-import desktopSlide3 from "../../../../img/desktop-slide-3.jpg";
+import PropTypes from "prop-types";
 
 const MIN_SLIDE_INDEX = 0;
 const INCREMENT_STEP = 1;
 
-const carPhotos = [
-  {
-    fullSize: desktopSlide1,
-    thumbnail: thumbnailDesktopSlide1,
-    description: `Описание первого слайда`,
-    id: nanoid(),
-  },
-  {
-    fullSize: desktopSlide2,
-    thumbnail: thumbnailDesktopSlide2,
-    description: `Описание второго слайда`,
-    id: nanoid(),
-  },
-  {
-    fullSize: desktopSlide3,
-    thumbnail: thumbnailDesktopSlide3,
-    description: `Описание третьего слайда`,
-    id: nanoid(),
-  },
-];
-
-const maxSlideIndex = carPhotos.length - 1;
-
-const Slider = () => {
+const Slider = ({
+  slides,
+}) => {
   const [
     state,
     setState,
   ] = useState({
     currentSlideIndex: MIN_SLIDE_INDEX,
   });
+
+  const maxSlideIndex = slides.length - 1;
 
   const handleShowPreviousSlideButtonClick = () => {
     setState((prevState) => ({
@@ -63,8 +35,8 @@ const Slider = () => {
   return (
     <section className="main__slider slider">
       <h2 className="slider__heading visually-hidden">Фотографии</h2>
-      <img className="slider__full-size-image" src={carPhotos[state.currentSlideIndex].fullSize}
-        alt={carPhotos[state.currentSlideIndex].description} width="600" height="375" />
+      <img className="slider__full-size-image" src={slides[state.currentSlideIndex].fullSize}
+        alt={slides[state.currentSlideIndex].description} width="600" height="375" />
       <p className="slider__new-model-mark"><b>New model</b></p>
       <div className="slider__bottom-wrapper">
         <p className="slider__buttons-paragraph">
@@ -78,7 +50,7 @@ const Slider = () => {
           </button>
         </p>
         <ul className="slider__list">
-          {carPhotos.map(({
+          {slides.map(({
             thumbnail,
             description,
             id,
@@ -92,6 +64,15 @@ const Slider = () => {
       </div>
     </section>
   );
+};
+
+Slider.propTypes = {
+  slides: PropTypes.arrayOf(PropTypes.exact({
+    fullSize: PropTypes.string.isRequired,
+    thumbnail: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+  })).isRequired,
 };
 
 export default Slider;

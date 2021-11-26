@@ -14,8 +14,8 @@ import Modal from "./modal/modal";
 
 import {
   getMockReviews,
+  getMockSlides,
 } from "../../../mocks";
-
 
 const VehiclePage = () => {
   const [
@@ -50,13 +50,13 @@ const VehiclePage = () => {
   return (
     <>
       <Header />
-      <main className="page__main main main--vehicle wrapper">
-        <h1 className="main__heading">
+      <main className="page__main main main--vehicle-page wrapper">
+        <h1 className="main__heading main__heading--vehicle-page">
           <span className=" visually-hidden">Информация об автомобиле «</span>
           <strong>Марпех 11</strong>
           <span className=" visually-hidden">»</span>
         </h1>
-        <Slider />
+        <Slider slides={getMockSlides()} />
         <GeneralInfo />
         <DetailedInfo reviews={state.reviews} onModalOpen={onModalToggle} />
       </main>

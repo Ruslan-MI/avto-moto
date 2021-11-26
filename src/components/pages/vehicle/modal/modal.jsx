@@ -4,7 +4,7 @@ import React, {
 import PropTypes from "prop-types";
 
 import StarRating from "./star-rating/star-rating";
-import withOverlay from "../../../../hocs/with-overlay";
+import withOverlay from "../../../../hocs/with-overlay/with-overlay";
 
 const Modal = ({
   onModalClose,

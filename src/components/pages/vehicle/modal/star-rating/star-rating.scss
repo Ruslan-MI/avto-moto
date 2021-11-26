@@ -34,12 +34,12 @@
   width: 28px;
   height: 28px;
   flex-grow: 1;
-  background-image: url("../../img/star.svg");
+  background-image: url("./img/star.svg");
   background-repeat: no-repeat;
   background-position: center;
 
   &--active {
-    background-image: url("../../img/star-active.svg");
+    background-image: url("./img/star-active.svg");
   }
 
   &:focus {

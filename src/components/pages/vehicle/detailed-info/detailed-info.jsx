@@ -47,7 +47,14 @@ const DetailedInfo = ({
 };
 
 DetailedInfo.propTypes = {
-  reviews: PropTypes.arrayOf(PropTypes.object).isRequired,
+  reviews: PropTypes.arrayOf(PropTypes.exact({
+    name: PropTypes.string.isRequired,
+    dignity: PropTypes.string.isRequired,
+    limitations: PropTypes.string.isRequired,
+    rating: PropTypes.number.isRequired,
+    comment: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired,
+  })).isRequired,
   onModalOpen: PropTypes.func.isRequired,
 };
 

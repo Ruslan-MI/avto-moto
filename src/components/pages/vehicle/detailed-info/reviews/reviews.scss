@@ -82,10 +82,10 @@
 .reviews__stars {
   width: 100px;
   height: 17px;
-  background-image: url("../../img/stars.svg");
+  background-image: url("./img/stars.svg");
 
   &--active {
-    background-image: url("../../img/stars-active.svg");
+    background-image: url("./img/stars-active.svg");
   }
 }
 

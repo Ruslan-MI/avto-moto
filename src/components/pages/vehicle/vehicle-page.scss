@@ -1,0 +1,23 @@
+.main {
+  &--vehicle-page {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 90px 0 83px;
+    position: relative;
+  }
+}
+
+.main__heading {
+  &--vehicle-page {
+    font-size: 30px;
+    position: absolute;
+    top: 78px;
+    left: 657px;
+    width: auto;
+    margin: 0;
+  }
+}
+
+.main__general-info {
+  flex-grow: 1;
+}

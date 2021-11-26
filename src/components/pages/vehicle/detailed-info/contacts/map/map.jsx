@@ -3,16 +3,16 @@ import React, {
   useRef,
 } from "react";
 
-import withGoogleMapsWrapper from "../../../../../../hocs/with-google-maps-wrapper";
+import withGoogleMapsWrapper from "../../../../../../hocs/with-google-maps-wrapper/with-google-maps-wrapper";
 
-import pin from "../../../../../../img/pin.svg";
+import pin from "./img/pin.svg";
 
 const center = {
-  lat: 59.96765,
-  lng: 30.32225,
+  lat: 59.96735,
+  lng: 30.32445,
 };
 
-const zoom = 14.5;
+const zoom = 14;
 
 const pinCoords = {
   lat: 59.96835,
@@ -36,7 +36,9 @@ const Map = () => {
     });
   });
 
-  return <div className="contacts__map map" id="map" ref={ref} />;
+  return <div className="contacts__map map" id="map" ref={ref} style={{
+    backgroundImage: `url("img/map.jpg")`,
+  }} />;
 };
 
 export default withGoogleMapsWrapper(Map);

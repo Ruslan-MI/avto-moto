@@ -23,3 +23,24 @@ export const getMockReviews = () => ([
     id: nanoid(),
   },
 ]);
+
+export const getMockSlides = () => ([
+  {
+    fullSize: `img/slide-1-desktop.jpg`,
+    thumbnail: `img/thumbnail-slide-1-desktop.jpg`,
+    description: `Описание первого слайда`,
+    id: nanoid(),
+  },
+  {
+    fullSize: `img/slide-2-desktop.jpg`,
+    thumbnail: `img/thumbnail-slide-2-desktop.jpg`,
+    description: `Описание второго слайда`,
+    id: nanoid(),
+  },
+  {
+    fullSize: `img/slide-3-desktop.jpg`,
+    thumbnail: `img/thumbnail-slide-3-desktop.jpg`,
+    description: `Описание третьего слайда`,
+    id: nanoid(),
+  },
+]);

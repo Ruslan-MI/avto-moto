@@ -35,20 +35,20 @@
   }
 
   &--fuel-type::before {
-    background-image: url("../../img/fuel-type.svg");
+    background-image: url("./img/fuel-type.svg");
     left: 1px;
   }
 
   &--transmission::before {
-    background-image: url("../../img/transmission.svg");
+    background-image: url("./img/transmission.svg");
   }
 
   &--power::before {
-    background-image: url("../../img/power.svg");
+    background-image: url("./img/power.svg");
   }
 
   &--volume::before {
-    background-image: url("../../img/volume.svg");
+    background-image: url("./img/volume.svg");
   }
 }
 
