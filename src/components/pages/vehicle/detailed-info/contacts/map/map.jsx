@@ -29,7 +29,7 @@ const Map = () => {
       disableDefaultUI: true,
     });
 
-    new window.google.maps.Marker({
+    window.googleMap = new window.google.maps.Marker({
       position: pinCoords,
       icon: pin,
       map,

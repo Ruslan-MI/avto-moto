@@ -1,9 +1,10 @@
 import React, {
   useEffect,
 } from "react";
+import PropTypes from "prop-types";
 
-const withOverlay = (Component) =>
-  ({
+const withOverlay = (Component) => {
+  const WithOverlayComponent = ({
     onModalClose,
     ...props
   }) => {
@@ -33,5 +34,12 @@ const withOverlay = (Component) =>
       </div>
     );
   };
+
+  WithOverlayComponent.propTypes = {
+    onModalClose: PropTypes.func.isRequired,
+  };
+
+  return WithOverlayComponent;
+};
 
 export default withOverlay;
