@@ -43,11 +43,12 @@ const VehiclePage = () => {
         },
         ...state.reviews,
       ],
+      isModalOpen: !state.isModalOpen,
     }));
   };
 
   return (
-    <div className="page">
+    <>
       <Header />
       <main className="page__main main main--vehicle wrapper">
         <h1 className="main__heading">
@@ -57,12 +58,11 @@ const VehiclePage = () => {
         </h1>
         <Slider />
         <GeneralInfo />
-        <DetailedInfo reviews={state.reviews} onModalToggle={onModalToggle} />
+        <DetailedInfo reviews={state.reviews} onModalOpen={onModalToggle} />
       </main>
       <Footer />
-      {state.isModalOpen && <Modal onModalToggle={onModalToggle} onOverlayMouseDown={onModalToggle}
-        onEscKeydown={onModalToggle} onReviewAdd={onReviewAdd} />}
-    </div>
+      {state.isModalOpen && <Modal onModalClose={onModalToggle} onReviewAdd={onReviewAdd} />}
+    </>
   );
 };
 

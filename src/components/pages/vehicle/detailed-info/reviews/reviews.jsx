@@ -8,10 +8,10 @@ const RATING_STAR_WIDTH = 20;
 
 const Reviews = ({
   reviews,
-  onModalToggle,
+  onModalOpen,
 }) => {
   const handleShowReviewFormButtonClick = () => {
-    onModalToggle();
+    onModalOpen();
   };
 
   return (
@@ -57,7 +57,7 @@ const Reviews = ({
                 }} />
               </div>
               <p className="reviews__rating-total">
-                <span className="visually-hidden">Итог: </span>
+                <span className="visually-hidden">Итоговая оценка: </span>
                 <strong className="reviews__rating-total-essence">{getRatingTitle(rating)}</strong>
               </p>
             </div>
@@ -82,7 +82,7 @@ const Reviews = ({
 
 Reviews.propTypes = {
   reviews: PropTypes.arrayOf(PropTypes.object).isRequired,
-  onModalToggle: PropTypes.func.isRequired,
+  onModalOpen: PropTypes.func.isRequired,
 };
 
 export default Reviews;

@@ -75,6 +75,16 @@
     opacity: 0.2;
   }
 
+  &:disabled:hover::after {
+    background-image: none;
+    content: "NO";
+    color: $general-text;
+    font-size: 20px;
+    font-weight: 600;
+    height: 25px;
+    transform: translate(1px, -50%);
+  }
+
   &:not([disabled]):hover,
   &:focus {
     background-color: $button-border;
@@ -92,6 +102,13 @@
   list-style: none;
   display: flex;
   justify-content: space-between;
+}
+
+.slider__item {
+  &--active {
+    outline: 4px solid $button-active;
+    outline-offset: 3px;
+  }
 }
 
 .slider__thumbnail-image {

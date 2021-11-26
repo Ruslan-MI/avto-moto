@@ -16,7 +16,7 @@ const DetailedInfoBlock = {
 
 const DetailedInfo = ({
   reviews,
-  onModalToggle,
+  onModalOpen,
 }) => {
   const [
     state,
@@ -40,7 +40,7 @@ const DetailedInfo = ({
           <NavItem key={item} id={item} currentBlock={state.currentBlock} onClick={onCurrentBlockChange} />)}
       </ul>
       {state.currentBlock === DetailedInfoBlock.SPECIFICATIONS && <Specifications />}
-      {state.currentBlock === DetailedInfoBlock.REVIEWS && <Reviews reviews={reviews} onModalToggle={onModalToggle} />}
+      {state.currentBlock === DetailedInfoBlock.REVIEWS && <Reviews reviews={reviews} onModalOpen={onModalOpen} />}
       {state.currentBlock === DetailedInfoBlock.CONTACTS && <Contacts />}
     </section>
   );
@@ -48,7 +48,7 @@ const DetailedInfo = ({
 
 DetailedInfo.propTypes = {
   reviews: PropTypes.arrayOf(PropTypes.object).isRequired,
-  onModalToggle: PropTypes.func.isRequired,
+  onModalOpen: PropTypes.func.isRequired,
 };
 
 export default DetailedInfo;

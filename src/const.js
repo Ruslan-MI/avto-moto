@@ -1,10 +1,10 @@
 export const RATINGS = [
   {
-    title: `Гнев и ненависть`,
+    title: `Ужасно`,
     value: 1,
   },
   {
-    title: `Посредственно`,
+    title: `Плохо`,
     value: 2,
   },
   {

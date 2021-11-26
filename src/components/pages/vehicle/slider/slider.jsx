@@ -82,8 +82,10 @@ const Slider = () => {
             thumbnail,
             description,
             id,
-          }) => (
-            <li className="slider__item" key={id}>
+          },
+            i,
+          ) => (
+            <li className={`slider__item ${i === state.currentSlideIndex ? `slider__item--active` : ``}`} key={id}>
               <img className="slider__thumbnail-image" src={thumbnail} alt={description} width="128" height="80" />
             </li>
           ))}

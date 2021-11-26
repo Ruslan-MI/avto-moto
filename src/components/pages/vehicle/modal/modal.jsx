@@ -7,7 +7,7 @@ import StarRating from "./star-rating/star-rating";
 import withOverlay from "../../../../hocs/with-overlay";
 
 const Modal = ({
-  onModalToggle,
+  onModalClose,
   onReviewAdd,
 }) => {
   const [
@@ -24,9 +24,8 @@ const Modal = ({
   const handleFormSubmit = (evt) => {
     evt.preventDefault();
 
-    onReviewAdd(state);
     localStorage.clear();
-    onModalToggle();
+    onReviewAdd(state);
   };
 
   const handleInputChange = (evt) => {
@@ -48,7 +47,7 @@ const Modal = ({
   };
 
   const handleCloseButtonClick = () => {
-    onModalToggle();
+    onModalClose();
   };
 
   return (
@@ -77,7 +76,7 @@ const Modal = ({
           <p className="modal__paragraph modal__paragraph--comment">
             <label className="modal__label modal__label--comment visually-hidden" htmlFor="comment">Комментарий:</label>
             <textarea className="modal__input modal__input--comment" name="comment" id="comment" cols="30" rows="6"
-              minLength="5" maxLength="200" placeholder="Комментарий" required value={state.comment} onChange={handleInputChange} />
+              placeholder="Комментарий" required value={state.comment} onChange={handleInputChange} />
           </p>
         </div>
         <p className="modal__paragraph modal__paragraph--submit-button">
@@ -92,7 +91,7 @@ const Modal = ({
 };
 
 Modal.propTypes = {
-  onModalToggle: PropTypes.func.isRequired,
+  onModalClose: PropTypes.func.isRequired,
   onReviewAdd: PropTypes.func.isRequired,
 };
 

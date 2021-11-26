@@ -6,6 +6,7 @@
 
 html {
   box-sizing: border-box;
+  height: 100%;
 }
 
 body {
@@ -15,6 +16,7 @@ body {
   color: $general-text;
   background-color: $general-white;
   min-width: $desktop-width;
+  height: 100%;
 }
 
 img {

@@ -16,10 +16,12 @@
 .header__nav-list {
   list-style: none;
   margin: 0;
-  padding: 0;
   margin-left: auto;
+  padding: 0;
+  width: 700px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-end;
 }
 
 .header__nav-item {
@@ -32,11 +34,10 @@
 
   &:hover,
   &:focus {
-    color: $button-hover;
+    color: $button-active;
   }
 
   &:active {
-    color: $button-hover;
     opacity: 0.5;
   }
 }
