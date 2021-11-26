@@ -5,11 +5,10 @@ import reportWebVitals from "./reportWebVitals";
 
 import "./scss/index.scss";
 
-ReactDOM.render(
+ReactDOM.render((
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
-  document.querySelector("#root")
-);
+  </React.StrictMode>
+), document.querySelector(`#root`));
 
 reportWebVitals();

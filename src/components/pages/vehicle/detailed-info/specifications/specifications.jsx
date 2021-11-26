@@ -1,3 +1,5 @@
+import React from "react";
+
 const Specifications = () => (
   <section className="detailed-info__specifications specifications" id="specifications">
     <h3 className="specifications__heading visually-hidden">Характеристики</h3>

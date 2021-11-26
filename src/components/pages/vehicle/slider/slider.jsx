@@ -1,4 +1,4 @@
-import {
+import React, {
   useState,
 } from "react";
 import {
@@ -19,19 +19,19 @@ const carPhotos = [
   {
     fullSize: desktopSlide1,
     thumbnail: thumbnailDesktopSlide1,
-    description: "Описание первого слайда",
+    description: `Описание первого слайда`,
     id: nanoid(),
   },
   {
     fullSize: desktopSlide2,
     thumbnail: thumbnailDesktopSlide2,
-    description: "Описание второго слайда",
+    description: `Описание второго слайда`,
     id: nanoid(),
   },
   {
     fullSize: desktopSlide3,
     thumbnail: thumbnailDesktopSlide3,
-    description: "Описание третьего слайда",
+    description: `Описание третьего слайда`,
     id: nanoid(),
   },
 ];
@@ -47,16 +47,16 @@ const Slider = () => {
   });
 
   const handleShowPreviousSlideButtonClick = () => {
-    setState((state) => ({
-      ...state,
-      currentSlideIndex: state.currentSlideIndex - INCREMENT_STEP,
+    setState((prevState) => ({
+      ...prevState,
+      currentSlideIndex: prevState.currentSlideIndex - INCREMENT_STEP,
     }));
   };
 
   const handleShowNextSlideButtonClick = () => {
-    setState((state) => ({
-      ...state,
-      currentSlideIndex: state.currentSlideIndex + INCREMENT_STEP,
+    setState((prevState) => ({
+      ...prevState,
+      currentSlideIndex: prevState.currentSlideIndex + INCREMENT_STEP,
     }));
   };
 
@@ -82,8 +82,7 @@ const Slider = () => {
             thumbnail,
             description,
             id,
-          },
-            i,
+          }, i,
           ) => (
             <li className={`slider__item ${i === state.currentSlideIndex ? `slider__item--active` : ``}`} key={id}>
               <img className="slider__thumbnail-image" src={thumbnail} alt={description} width="128" height="80" />

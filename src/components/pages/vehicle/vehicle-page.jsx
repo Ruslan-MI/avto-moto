@@ -1,4 +1,4 @@
-import {
+import React, {
   useState,
 } from "react";
 import {
@@ -27,23 +27,23 @@ const VehiclePage = () => {
   });
 
   const onModalToggle = () => {
-    setState((state) => ({
-      ...state,
-      isModalOpen: !state.isModalOpen,
+    setState((prevState) => ({
+      ...prevState,
+      isModalOpen: !prevState.isModalOpen,
     }));
   };
 
   const onReviewAdd = (review) => {
-    setState((state) => ({
-      ...state,
+    setState((prevState) => ({
+      ...prevState,
       reviews: [
         {
           ...review,
           id: nanoid(),
         },
-        ...state.reviews,
+        ...prevState.reviews,
       ],
-      isModalOpen: !state.isModalOpen,
+      isModalOpen: !prevState.isModalOpen,
     }));
   };
 

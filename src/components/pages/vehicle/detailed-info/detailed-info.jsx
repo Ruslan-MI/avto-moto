@@ -1,4 +1,4 @@
-import {
+import React, {
   useState,
 } from "react";
 import PropTypes from "prop-types";
@@ -26,8 +26,8 @@ const DetailedInfo = ({
   });
 
   const onCurrentBlockChange = (id) => {
-    setState((state) => ({
-      ...state,
+    setState((prevState) => ({
+      ...prevState,
       currentBlock: id,
     }));
   };

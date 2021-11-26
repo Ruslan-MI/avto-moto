@@ -1,3 +1,5 @@
+import React from "react";
+
 const Footer = () => (
   <footer className="page__footer footer">
     <ul className="footer__nav-list wrapper">

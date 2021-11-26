@@ -1,4 +1,4 @@
-import {
+import React, {
   useState,
 } from "react";
 import PropTypes from "prop-types";
@@ -29,8 +29,8 @@ const Modal = ({
   };
 
   const handleInputChange = (evt) => {
-    setState((state) => ({
-      ...state,
+    setState((prevState) => ({
+      ...prevState,
       [evt.target.name]: evt.target.value,
     }));
 
@@ -38,8 +38,8 @@ const Modal = ({
   };
 
   const onRatingChange = (newRating) => {
-    setState((state) => ({
-      ...state,
+    setState((prevState) => ({
+      ...prevState,
       rating: newRating,
     }));
 

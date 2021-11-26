@@ -1,4 +1,4 @@
-import {
+import React, {
   useState,
 } from "react";
 import PropTypes from "prop-types";
@@ -25,15 +25,15 @@ const StarRating = ({
   };
 
   const handleRatingMouseEnter = (evt) => {
-    setState((state) => ({
-      ...state,
+    setState((prevState) => ({
+      ...prevState,
       ratingOnMouseEnter: Number(evt.target.value),
     }));
   };
 
   const handleRatingMouseLeave = () => {
-    setState((state) => ({
-      ...state,
+    setState((prevState) => ({
+      ...prevState,
       ratingOnMouseEnter: INITIAL_RATING_ON_MOUSE_ENTER,
     }));
   };

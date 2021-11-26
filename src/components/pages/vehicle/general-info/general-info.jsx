@@ -1,3 +1,5 @@
+import React from "react";
+
 const GeneralInfo = () => (
   <section className="main__general-info general-info">
     <h2 className="general-info__heading visually-hidden">Основная информация</h2>
