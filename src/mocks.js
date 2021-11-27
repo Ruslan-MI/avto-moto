@@ -2,7 +2,7 @@ import {
   nanoid,
 } from "nanoid";
 
-export const getMockReviews = () => ([
+const mockReviews = [
   {
     name: `Борис Иванов`,
     dignity: `мощность, внешний вид`,
@@ -22,9 +22,9 @@ export const getMockReviews = () => ([
     Так что, если покупать эту машину, надо быть готовым к большим расходам на обслуживание.`,
     id: nanoid(),
   },
-]);
+];
 
-export const getMockSlides = () => ([
+const mockSlides = [
   {
     fullSize: `img/slide-1-desktop.jpg`,
     thumbnail: `img/thumbnail-slide-1-desktop.jpg`,
@@ -43,4 +43,8 @@ export const getMockSlides = () => ([
     description: `Описание третьего слайда`,
     id: nanoid(),
   },
-]);
+];
+
+export const getMockReviews = () => mockReviews;
+
+export const getMockSlides = () => mockSlides;
