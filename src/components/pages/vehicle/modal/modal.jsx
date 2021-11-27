@@ -1,5 +1,6 @@
 import React, {
   useState,
+  useRef,
 } from "react";
 import PropTypes from "prop-types";
 
@@ -20,6 +21,9 @@ const Modal = ({
     rating: Number(localStorage.getItem(`rating`)) || 5,
     comment: localStorage.getItem(`comment`) || ``,
   });
+
+  const nameInputRef = useRef();
+  const closeButtonRef = useRef();
 
   const handleFormSubmit = (evt) => {
     evt.preventDefault();
@@ -50,6 +54,22 @@ const Modal = ({
     onModalClose();
   };
 
+  const handleCloseButtonTabKeydown = (evt) => {
+    if (!evt.shiftKey && evt.key === `Tab`) {
+      evt.preventDefault();
+
+      nameInputRef.current.focus();
+    }
+  };
+
+  const handleNameInputShiftTabKeydown = (evt) => {
+    if (evt.shiftKey && evt.key === `Tab`) {
+      evt.preventDefault();
+
+      closeButtonRef.current.focus();
+    }
+  };
+
   return (
     <section className="page__modal modal modal--new-review-form">
       <h3 className="modal__heading">Оставить отзыв</h3>
@@ -58,7 +78,8 @@ const Modal = ({
           <p className="modal__paragraph modal__paragraph--name">
             <label className="modal__label modal__label--name visually-hidden" htmlFor="name">Имя:</label>
             <input className="modal__input modal__input--name" type="text" name="name"
-              id="name" placeholder="Имя" pattern="[A-Za-zА-Яа-яЁё]{1,}" required autoFocus value={state.name} onChange={handleInputChange} />
+              id="name" placeholder="Имя" pattern="[A-Za-zА-Яа-яЁё]{1,}" required autoFocus value={state.name} ref={nameInputRef}
+              onChange={handleInputChange} onKeyDown={handleNameInputShiftTabKeydown} />
           </p>
           <p className="modal__paragraph modal__paragraph--dignity">
             <label className="modal__label modal__label--dignity visually-hidden" htmlFor="dignity">Достоинства:</label>
@@ -83,7 +104,8 @@ const Modal = ({
           <button className="modal__button modal__button--submit" type="submit">Оставить отзыв</button>
         </p>
       </form>
-      <button className="modal__button modal__button--close" type="button" onClick={handleCloseButtonClick}>
+      <button className="modal__button modal__button--close" type="button" ref={closeButtonRef}
+        onClick={handleCloseButtonClick} onKeyDown={handleCloseButtonTabKeydown}>
         <span className="visually-hidden">Закрыть</span>
       </button>
     </section>
