@@ -24,6 +24,7 @@ const VehiclePage = () => {
   ] = useState({
     isModalOpen: false,
     reviews: getMockReviews(),
+    slides: getMockSlides(),
   });
 
   const onModalToggle = () => {
@@ -56,7 +57,7 @@ const VehiclePage = () => {
           <strong>Марпех 11</strong>
           <span className=" visually-hidden">»</span>
         </h1>
-        <Slider slides={getMockSlides()} />
+        <Slider slides={state.slides} />
         <GeneralInfo />
         <DetailedInfo reviews={state.reviews} onModalOpen={onModalToggle} />
       </main>
