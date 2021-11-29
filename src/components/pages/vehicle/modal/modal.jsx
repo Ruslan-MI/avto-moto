@@ -18,7 +18,7 @@ const Modal = ({
     name: localStorage.getItem(`name`) || ``,
     dignity: localStorage.getItem(`dignity`) || ``,
     limitations: localStorage.getItem(`limitations`) || ``,
-    rating: Number(localStorage.getItem(`rating`)) || 5,
+    rating: localStorage.getItem(`rating`) || `5`,
     comment: localStorage.getItem(`comment`) || ``,
   });
 
@@ -32,22 +32,16 @@ const Modal = ({
     onReviewAdd(state);
   };
 
-  const handleInputChange = (evt) => {
+  const handleFormChange = (evt) => {
+    const name = evt.target.name;
+    const value = evt.target.value;
+
     setState((prevState) => ({
       ...prevState,
-      [evt.target.name]: evt.target.value,
+      [name]: value,
     }));
 
-    localStorage.setItem(`${evt.target.name}`, evt.target.value);
-  };
-
-  const onRatingChange = (newRating) => {
-    setState((prevState) => ({
-      ...prevState,
-      rating: newRating,
-    }));
-
-    localStorage.setItem(`rating`, newRating);
+    localStorage.setItem(name, value);
   };
 
   const handleCloseButtonClick = () => {
@@ -73,31 +67,31 @@ const Modal = ({
   return (
     <section className="page__modal modal modal--new-review-form">
       <h3 className="modal__heading">Оставить отзыв</h3>
-      <form className="modal__form" action="https://echo.htmlacademy.ru" method="POST" onSubmit={handleFormSubmit}>
+      <form className="modal__form" action="https://echo.htmlacademy.ru" method="POST" onChange={handleFormChange} onSubmit={handleFormSubmit}>
         <div className="modal__inputs-wrapper modal__inputs-wrapper--first">
           <p className="modal__paragraph modal__paragraph--name">
             <label className="modal__label modal__label--name visually-hidden" htmlFor="name">Имя:</label>
             <input className="modal__input modal__input--name" type="text" name="name"
-              id="name" placeholder="Имя" pattern="[A-Za-zА-Яа-яЁё]{1,}" required autoFocus value={state.name} ref={nameInputRef}
-              onChange={handleInputChange} onKeyDown={handleNameInputShiftTabKeydown} />
+              id="name" placeholder="Имя" pattern="[A-Za-zА-Яа-яЁё]{1,}" required autoFocus defaultValue={state.name} ref={nameInputRef}
+              onKeyDown={handleNameInputShiftTabKeydown} />
           </p>
           <p className="modal__paragraph modal__paragraph--dignity">
             <label className="modal__label modal__label--dignity visually-hidden" htmlFor="dignity">Достоинства:</label>
             <input className="modal__input modal__input--dignity" type="text" name="dignity"
-              id="dignity" placeholder="Достоинства" value={state.dignity} onChange={handleInputChange} />
+              id="dignity" placeholder="Достоинства" defaultValue={state.dignity} />
           </p>
           <p className="modal__paragraph modal__paragraph--limitations">
             <label className="modal__label modal__label--limitations visually-hidden" htmlFor="limitations">Недостатки:</label>
             <input className="modal__input modal__input--limitations" type="text" name="limitations"
-              id="limitations" placeholder="Недостатки" value={state.limitations} onChange={handleInputChange} />
+              id="limitations" placeholder="Недостатки" defaultValue={state.limitations} />
           </p>
         </div>
         <div className="modal__inputs-wrapper modal__inputs-wrapper--second">
-          <StarRating currentRating={Number(state.rating)} onChange={onRatingChange} />
+          <StarRating currentRating={state.rating} />
           <p className="modal__paragraph modal__paragraph--comment">
             <label className="modal__label modal__label--comment visually-hidden" htmlFor="comment">Комментарий:</label>
             <textarea className="modal__input modal__input--comment" name="comment" id="comment" cols="30" rows="6"
-              placeholder="Комментарий" required value={state.comment} onChange={handleInputChange} />
+              placeholder="Комментарий" required defaultValue={state.comment} />
           </p>
         </div>
         <p className="modal__paragraph modal__paragraph--submit-button">

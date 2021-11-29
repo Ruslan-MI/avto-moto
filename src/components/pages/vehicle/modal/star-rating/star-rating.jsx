@@ -11,7 +11,6 @@ const INITIAL_RATING_ON_MOUSE_ENTER = 0;
 
 const StarRating = ({
   currentRating,
-  onChange,
 }) => {
   const [
     state,
@@ -19,10 +18,6 @@ const StarRating = ({
   ] = useState({
     ratingOnMouseEnter: INITIAL_RATING_ON_MOUSE_ENTER,
   });
-
-  const handleRatingChange = (evt) => {
-    onChange(Number(evt.target.value));
-  };
 
   const handleRatingMouseEnter = (evt) => {
     setState((prevState) => ({
@@ -45,17 +40,21 @@ const StarRating = ({
         {RATINGS.map(({
           title,
           value,
-        }) => <input className={`star-rating__input ${(state.ratingOnMouseEnter || currentRating) >= value ? `star-rating__input--active` : ``}`}
-          type="radio" name="rating" key={value} aria-label={title} value={value} defaultChecked={currentRating === value}
-          onChange={handleRatingChange} onMouseEnter={handleRatingMouseEnter} onMouseLeave={handleRatingMouseLeave} />)}
+        }) => {
+          const adaptedCurrentRating = Number(currentRating);
+          const adaptedValue = Number(value);
+
+          return <input className={`star-rating__input ${(state.ratingOnMouseEnter || adaptedCurrentRating) >= adaptedValue ? `star-rating__input--active` : ``}`}
+            type="radio" name="rating" key={value} aria-label={title} value={value} defaultChecked={adaptedCurrentRating === adaptedValue}
+            onMouseEnter={handleRatingMouseEnter} onMouseLeave={handleRatingMouseLeave} />;
+        })}
       </fieldset>
     </div>
   );
 };
 
 StarRating.propTypes = {
-  currentRating: PropTypes.number.isRequired,
-  onChange: PropTypes.func.isRequired,
+  currentRating: PropTypes.string.isRequired,
 };
 
 export default StarRating;

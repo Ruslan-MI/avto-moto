@@ -51,7 +51,7 @@ DetailedInfo.propTypes = {
     name: PropTypes.string.isRequired,
     dignity: PropTypes.string.isRequired,
     limitations: PropTypes.string.isRequired,
-    rating: PropTypes.number.isRequired,
+    rating: PropTypes.string.isRequired,
     comment: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
   })).isRequired,
