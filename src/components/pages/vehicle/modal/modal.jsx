@@ -72,8 +72,8 @@ const Modal = ({
           <p className="modal__paragraph modal__paragraph--name">
             <label className="modal__label modal__label--name visually-hidden" htmlFor="name">Имя:</label>
             <input className="modal__input modal__input--name" type="text" name="name"
-              id="name" placeholder="Имя" pattern="[A-Za-zА-Яа-яЁё]{1,}" required autoFocus defaultValue={state.name} ref={nameInputRef}
-              onKeyDown={handleNameInputShiftTabKeydown} />
+              id="name" placeholder="Имя" pattern="[A-Za-zА-Яа-яЁё][-─–—A-Za-zА-Яа-яЁё\s]{0,}" required autoFocus
+              defaultValue={state.name} ref={nameInputRef} onKeyDown={handleNameInputShiftTabKeydown} />
           </p>
           <p className="modal__paragraph modal__paragraph--dignity">
             <label className="modal__label modal__label--dignity visually-hidden" htmlFor="dignity">Достоинства:</label>
