@@ -4,9 +4,14 @@
 }
 
 .header__nav {
-  padding: 15px 7px 14px;
+  padding-top: 15px;
+  padding-bottom: 14px;
   display: flex;
   flex-wrap: wrap;
+}
+
+.header__logo-link {
+  margin: 0 7px;
 }
 
 .header__logo-image {
@@ -25,8 +30,8 @@
 }
 
 .header__nav-item {
-  padding: 18px 0;
-  padding-left: 68px;
+  padding: 18px 7px;
+  margin-left: 54px;
 }
 
 .header__nav-link {

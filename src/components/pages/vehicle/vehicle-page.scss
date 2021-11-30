@@ -2,22 +2,13 @@
   &--vehicle-page {
     display: flex;
     flex-wrap: wrap;
-    padding: 90px 0 83px;
+    padding-top: 90px;
+    padding-bottom: 83px;
     position: relative;
   }
 }
 
-.main__heading {
-  &--vehicle-page {
-    font-size: 30px;
-    position: absolute;
-    top: 78px;
-    left: 657px;
-    width: auto;
-    margin: 0;
-  }
-}
-
-.main__general-info {
+.main__general-info,
+.main__detailed-info {
   flex-grow: 1;
 }

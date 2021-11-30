@@ -52,11 +52,7 @@ const VehiclePage = () => {
     <>
       <Header />
       <main className="page__main main main--vehicle-page wrapper">
-        <h1 className="main__heading main__heading--vehicle-page">
-          <span className=" visually-hidden">Информация об автомобиле «</span>
-          <strong>Марпех 11</strong>
-          <span className=" visually-hidden">»</span>
-        </h1>
+        <h1 className="main__heading visually-hidden">Информация об автомобиле</h1>
         <Slider slides={state.slides} />
         <GeneralInfo />
         <DetailedInfo reviews={state.reviews} onModalOpen={onModalToggle} />

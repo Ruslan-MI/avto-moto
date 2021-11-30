@@ -1,6 +1,16 @@
 .general-info {
-  padding: 46px 0;
-  padding-left: 57px;
+  max-width: 391px;
+}
+
+.general-info__wrapper {
+  width: 334px;
+  margin-left: auto;
+}
+
+.general-info__heading {
+  font-size: 30px;
+  margin: 0 0 11px;
+  transform: translateY(-12px);
 }
 
 .general-info__specifications-list {
@@ -65,7 +75,6 @@
   list-style: none;
   margin: 0;
   padding: 16px 0;
-  width: 334px;
 }
 
 .general-info__price-value {
@@ -97,7 +106,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  padding-top: 24px;
+  padding-top: 25px;
   transform: translateX(-3px);
 }
 
