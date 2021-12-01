@@ -32,18 +32,18 @@ const Reviews = ({
               <p className="reviews__author-paragraph">
                 <cite className="reviews__author">{name}</cite>
               </p>
-              <div className="reviews__content-wrapper reviews__content-wrapper--dignity">
+              {dignity && <div className="reviews__content-wrapper reviews__content-wrapper--dignity">
                 <h4 className="reviews__content-heading">Достоинства</h4>
                 <p className="reviews__content">
                   {dignity}
                 </p>
-              </div>
-              <div className="reviews__content-wrapper reviews__content-wrapper--limitations">
+              </div>}
+              {limitations && <div className="reviews__content-wrapper reviews__content-wrapper--limitations">
                 <h4 className="reviews__content-heading">Недостатки</h4>
                 <p className="reviews__content">
                   {limitations}
                 </p>
-              </div>
+              </div>}
               <div className="reviews__content-wrapper reviews__content-wrapper--comment">
                 <h4 className="reviews__content-heading">Комментарий</h4>
                 <p className="reviews__content">
