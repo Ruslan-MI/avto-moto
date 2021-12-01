@@ -6,6 +6,9 @@ import PropTypes from "prop-types";
 
 import StarRating from "./star-rating/star-rating";
 import withOverlay from "../../../../hocs/with-overlay/with-overlay";
+import {
+  checkInvalidity,
+} from "../../../../utils";
 
 const Modal = ({
   onModalClose,
@@ -23,6 +26,7 @@ const Modal = ({
   });
 
   const nameInputRef = useRef();
+  const commentInputRef = useRef();
   const closeButtonRef = useRef();
 
   const handleFormSubmit = (evt) => {
@@ -42,6 +46,10 @@ const Modal = ({
     }));
 
     localStorage.setItem(name, value);
+
+    checkInvalidity([
+      evt.target,
+    ]);
   };
 
   const handleCloseButtonClick = () => {
@@ -63,6 +71,12 @@ const Modal = ({
       closeButtonRef.current.focus();
     }
   };
+
+  const handleSubmitButtonClick = (evt) =>
+    checkInvalidity([
+      nameInputRef.current,
+      commentInputRef.current,
+    ]) && evt.preventDefault();
 
   return (
     <section className="page__modal modal modal--new-review-form">
@@ -91,11 +105,11 @@ const Modal = ({
           <p className="modal__paragraph modal__paragraph--comment">
             <label className="modal__label modal__label--comment visually-hidden" htmlFor="comment">Комментарий:</label>
             <textarea className="modal__input modal__input--comment" name="comment" id="comment" cols="30" rows="6"
-              placeholder="Комментарий" required defaultValue={state.comment} />
+              placeholder="Комментарий" required defaultValue={state.comment} ref={commentInputRef} />
           </p>
         </div>
         <p className="modal__paragraph modal__paragraph--submit-button">
-          <button className="modal__button modal__button--submit" type="submit">Оставить отзыв</button>
+          <button className="modal__button modal__button--submit" type="submit" onClick={handleSubmitButtonClick}>Оставить отзыв</button>
         </p>
       </form>
       <button className="modal__button modal__button--close" type="button" ref={closeButtonRef}

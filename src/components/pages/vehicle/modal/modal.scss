@@ -100,8 +100,7 @@
     font-weight: 600;
     font-size: 14px;
     letter-spacing: 0.12em;
-    padding: 17px;
-    padding-left: 19px;
+    padding: 17px 19px;
   }
 
   &--submit:hover,
@@ -164,4 +163,32 @@
   &--close:active::after {
     background-color: $general-white;
   }
+}
+
+.modal__invalidity {
+  &::after {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 23px;
+    top: 0;
+    left: 0;
+    transform: translateY(-100%);
+    color: $error-message;
+    font-size: 14px;
+    line-height: 19px;
+  }
+
+  &--value-missing::after {
+    content: "Пожалуйста, заполните поле";
+  }
+
+  &--pattern-mismatch::after {
+    content: "Поле может содержать только буквы, тире и пробелы";
+    height: 42px;
+  }
+}
+
+.modal__invalidity .modal__input {
+  border: 1px solid $error-message;
 }
