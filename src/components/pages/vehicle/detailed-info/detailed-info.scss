@@ -13,10 +13,6 @@
   font-size: 20px;
 }
 
-.detailed-info__nav-item {
-  flex-grow: 1;
-}
-
 .detailed-info__nav-link {
   color: inherit;
   display: block;
@@ -27,6 +23,7 @@
     color: $general-white;
     background-color: $button-active;
     border-color: $button-active;
+    user-select: none;
   }
 
   &:not(&--active):hover,

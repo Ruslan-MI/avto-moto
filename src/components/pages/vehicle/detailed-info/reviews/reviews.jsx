@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 import {
   getRatingTitle,
+  getRelativeTime,
 } from "../../../../../utils";
 
 const RATING_STAR_WIDTH = 20;
@@ -26,6 +27,7 @@ const Reviews = ({
           rating,
           comment,
           id,
+          date,
         }) => (
           <li className="reviews__item" key={id}>
             <blockquote className="reviews__blockquote">
@@ -64,7 +66,7 @@ const Reviews = ({
             </div>
             <div className="reviews__bottom-wrapper">
               <p className="reviews__date-paragraph">
-                <time className="reviews__date" dateTime="2016-11-18T09:54">1 минуту назад</time>
+                <time className="reviews__date" dateTime={date}>{getRelativeTime(date)}</time>
               </p>
               <p className="reviews__buttons-paragraph reviews__buttons-paragraph--show-answer-form">
                 <button className="reviews__button reviews__button--show-answer-form" type="button">Ответить</button>
@@ -89,6 +91,7 @@ Reviews.propTypes = {
     rating: PropTypes.string.isRequired,
     comment: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
   })).isRequired,
   onModalOpen: PropTypes.func.isRequired,
 };

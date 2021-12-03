@@ -41,6 +41,7 @@ const VehiclePage = () => {
         {
           ...review,
           id: nanoid(),
+          date: new Date().toISOString(),
         },
         ...prevState.reviews,
       ],

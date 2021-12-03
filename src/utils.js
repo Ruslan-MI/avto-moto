@@ -1,9 +1,17 @@
+import dayjs from "dayjs";
+import relativeTime from "dayjs/plugin/relativeTime";
+import "dayjs/locale/ru";
+dayjs.extend(relativeTime);
+
 import {
   RATINGS,
 } from "./const";
 
 export const getRatingTitle = (rating) =>
   RATINGS.find((item) => item.value === rating).title;
+
+export const getRelativeTime = (date) =>
+  dayjs(date).locale(`ru`).fromNow();
 
 export const checkInvalidity = (inputs) => inputs.map((input) => {
   const validity = input.validity;

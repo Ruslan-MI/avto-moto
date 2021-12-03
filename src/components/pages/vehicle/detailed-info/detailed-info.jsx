@@ -54,6 +54,7 @@ DetailedInfo.propTypes = {
     rating: PropTypes.string.isRequired,
     comment: PropTypes.string.isRequired,
     id: PropTypes.string.isRequired,
+    date: PropTypes.string.isRequired,
   })).isRequired,
   onModalOpen: PropTypes.func.isRequired,
 };
